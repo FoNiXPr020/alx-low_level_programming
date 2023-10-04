@@ -7,35 +7,19 @@
  *Return: Pointer
  */
 
-char *create_array(unsigned int size, char c)
-{
-	char *buffer;
-	unsigned int position;
+char *create_array(unsigned int size, char c) {
+    if (size == 0) {
+        return NULL;
+    }
 
-	if (size == 0)
-	{
-		return (NULL);
-	}
+    char *array = malloc(size * sizeof(char));
+    if (array == NULL) {
+        return NULL; // Memory allocation failed
+    }
 
-	/*Define values with malloc*/
-	buffer = (char *) malloc(size * sizeof(c));
+    for (unsigned int i = 0; i < size; i++) {
+        array[i] = c;
+    }
 
-	if (buffer == 0)
-	{
-		return (NULL);
-	}
-
-	else
-	{
-		position = 0;
-		while (position < size) /*While for array*/
-		{
-			*(buffer + position) = c;
-			position++;
-		}
-
-		return (buffer);
-	}
-
+    return array;
 }
-
