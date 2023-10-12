@@ -2,8 +2,8 @@
 #include <stdarg.h>
 
 /**
- * sum_them_all -  Sum all arguments
- * @n: Int, Number of undefined arguments
+ * sum_them_all -  sum all arguments
+ * @n: int, number of undefined arguments
  *
  * Return: sum of args
  * On error, 0 is returned
