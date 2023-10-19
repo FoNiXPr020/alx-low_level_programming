@@ -1,20 +1,15 @@
-section .data
-	holberton db "Hello, Holberton", 10, 0
-	format db "%s", 0
+global main
+extern printf
 
-section .text
-	global main
-	extern printf
-
+	section .text
 main:
-    push rbp
-    mov rbp, rsp
-
+	push rbp
 	mov rdi, format
-	mov rsi, holberton
+	mov rsi, hello
+	mov rax, 0
 	call printf
-
-    pop rbp
-	mov rax, 60
-	xor rdi, rdi
-	syscall
+	pop rbp
+	mov rax, 0
+	ret
+hello: db "Hello, Holberton", 0
+format:	db "%s", 10, 0
