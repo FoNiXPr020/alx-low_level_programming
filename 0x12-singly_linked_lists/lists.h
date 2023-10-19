@@ -23,6 +23,7 @@ size_t print_list(const list_t *header);
 size_t list_len(const list_t *header);
 list_t *add_node(list_t **header, const char *str);
 list_t *add_node_end(list_t **header, const char *str);
+void free_list(list_t *header);
 
 /* END OF LISTS_H */
 #endif
