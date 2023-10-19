@@ -6,9 +6,9 @@
 
 /**
  * struct list_s - Singly Linked List Node
- * @str: Dynamic string (malloc'ed)
- * @len: Length of the string
- * @next: Pointer to the next node
+ * @iString: Dynamic string (malloc'ed)
+ * @iLen: Length of the string
+ * @iNext: Pointer to the next node
  *
  * Description: Defines a node for a singly linked list.
  */
