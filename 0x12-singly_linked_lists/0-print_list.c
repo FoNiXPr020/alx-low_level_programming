@@ -3,7 +3,7 @@
 
 /**
  * print_list - Prints all the elements of a linked list
- * @h: A pointer to the list_t list to print
+ * @header: A pointer to the list_t list to print
  *
  * This function traverses the linked list and prints the data
  * of each node, followed by a newline character. It returns the
@@ -11,7 +11,7 @@
  *
  * Return: The number of nodes printed.
  */
- 
+
 size_t print_list(const list_t *header)
 {
 	size_t iNum = 0;
@@ -28,5 +28,4 @@ size_t print_list(const list_t *header)
 
 	return (iNum);
 }
-
 
