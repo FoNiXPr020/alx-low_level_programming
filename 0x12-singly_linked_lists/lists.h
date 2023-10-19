@@ -6,23 +6,20 @@
 
 /**
  * struct list_s - Singly Linked List Node
- * @iString: Dynamic string (malloc'ed)
- * @iLen: Length of the string
- * @iNext: Pointer to the next node
+ * @str: Dynamic string (malloc'ed)
+ * @len: Length of the string
+ * @next: Pointer to the next node
  *
  * Description: Defines a node for a singly linked list.
  */
 typedef struct list_s
 {
-	char *iString;
-	unsigned int iLen;
-	struct list_s *iNext;
+	char *str;
+	unsigned int len;
+	struct list_s *next;
 } list_t;
 
-int _putchar(char c);
 size_t print_list(const list_t *header);
 
 /* END OF LISTS_H */
 #endif
-
-
