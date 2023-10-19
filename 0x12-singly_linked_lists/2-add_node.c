@@ -10,8 +10,8 @@
  */
 list_t *add_node(list_t **header, const char *str)
 {
-	list_t *iNew;
 	unsigned int iLen = 0;
+	list_t *iNew;
 
 	while (str[iLen])
 		iLen++;
