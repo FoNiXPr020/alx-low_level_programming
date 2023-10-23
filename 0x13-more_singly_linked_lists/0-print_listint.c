@@ -9,7 +9,7 @@
 size_t print_listint(const listint_t *header)
 {
 	const listint_t *iTemp;
-	unsigned int iCount = 0;
+	size_t iCount = 0;
 
 	iTemp = header;
 	while (iTemp)
