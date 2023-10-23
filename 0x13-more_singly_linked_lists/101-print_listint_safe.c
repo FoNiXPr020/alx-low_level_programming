@@ -8,22 +8,48 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t iNum = 0;
-	long int gDiff;
+	const listint_t *slow_p = head ,*fast_p = head;
+	size_t ele = 0;
+	int is_loop = 0;
 
-	while (head)
+	while (slow_p && fast_p && fast_p->next)
 	{
-		gDiff = head - head->next;
-		iNum++;
-		printf("[%p] %d\n", (void *)head, head->n);
-		if (gDiff > 0)
-			head = head->next;
-		else
+		if (!(fast_p->next->next))
+			break;
+		slow_p = slow_p->next;
+		fast_p = fast_p->next->next;
+		if (slow_p == fast_p)
 		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
+			slow_p = slow_p->next;
+			is_loop = 1;
 			break;
 		}
 	}
 
-	return (iNum);
+	if (!is_loop)
+	{
+		while (head)
+		{
+			ele++;
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+		return (ele);
+	}
+
+	while (head)
+	{
+		ele++;
+		if (head == slow_p)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			printf("-> [%p] %d\n", (void *)head, head->next->n);
+			exit(98);
+		}
+
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
+	}
+	return (0);
 }
+
