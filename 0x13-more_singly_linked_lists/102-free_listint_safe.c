@@ -9,9 +9,9 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *iTemp;
-	int gDiff;
 	size_t iLen = 0;
+	int gDiff;
+	listint_t *iTemp;
 
 	if (!h || !*h)
 		return (0);
@@ -22,18 +22,20 @@ size_t free_listint_safe(listint_t **h)
 		if (gDiff > 0)
 		{
 			iTemp = (*h)->next;
+			free(*h);
 			*h = iTemp;
 			iLen++;
 		}
 		else
 		{
+			free(*h);
 			*h = NULL;
 			iLen++;
 			break;
 		}
 	}
+
 	*h = NULL;
 
 	return (iLen);
 }
-
