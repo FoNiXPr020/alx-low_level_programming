@@ -3,17 +3,17 @@
 
 /**
  * sum_listint - Sums the 'n' data values in a linked list.
- * @header: Pointer to the first node of the list.
+ * @h: Pointer to the first node of the list.
  * Return: The integer sum of 'n' values.
  */
-int sum_listint(listint_t *header)
+int sum_listint(listint_t *h)
 {
 	int Stock = 0;
 
-	while (header != NULL)
+	while (h != NULL)
 	{
-		Stock += header->n;
-		header = header->next;
+		Stock += h->n;
+		h = h->next;
 	}
 	return (Stock);
 }

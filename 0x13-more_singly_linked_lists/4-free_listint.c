@@ -3,17 +3,17 @@
 
 /**
  * free_listint - Frees a singly linked list.
- * @header: A pointer to the first node of the list.
+ * @h: A pointer to the first node of the list.
  *
  * Description: This function frees the memory occupied
  * by each node in the
- * linked list, starting from the @header.
+ * linked list, starting from the @h.
  */
-void free_listint(listint_t *header)
+void free_listint(listint_t *h)
 {
 	listint_t *iTemp, *iTemp2;
 
-	iTemp = header;
+	iTemp = h;
 
 	while (iTemp != NULL)
 	{
