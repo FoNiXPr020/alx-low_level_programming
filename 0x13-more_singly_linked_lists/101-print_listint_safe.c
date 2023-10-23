@@ -7,23 +7,19 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t iNum = 0;
-	long int gDiff;
-
-	while (head)
+	if (head)
 	{
-		gDiff = head - head->next;
-		iNum++;
 		printf("[%p] %d\n", (void *)head, head->n);
 
-		if (gDiff > 0)
-			head = head->next;
+		if (head->next < head)
+		{
+			return (1 + print_listint_safe(head->next));
+		}
 		else
 		{
 			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
-			break;
+			return (1);
 		}
 	}
-
-	return (iNum);
+	return (0);
 }
