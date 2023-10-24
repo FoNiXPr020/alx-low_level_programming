@@ -8,22 +8,24 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t iNum = 0;
-	long int gDiff;
+	size_t i = 0;
+	const listint_t *current = head;
 
-	while (head)
+	while (current)
 	{
-		gDiff = head - head->next;
-		iNum++;
-		printf("[%p] %d\n", (void *)head, head->n);
-		if (gDiff > 0)
-			head = head->next;
+		printf("[%p] %d\n", (void *)current, current->n);
+
+		if (current <= current->next)
+		{
+			i++;
+			current = current->next;
+		}
 		else
 		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
+			printf("-> [%p] %d\n", (void *)current->next, current->next->n);
 			break;
 		}
 	}
 
-	return (iNum);
+	return (i);
 }
