@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * print_listint_safe - Safely prints a linked list
@@ -9,24 +9,22 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t i = 0;
-	const listint_t *current = head;
+	size_t iNum = 0;
+	long int Current;
 
-	while (current)
+	while (head)
 	{
-		printf("[%p] %d\n", (void *)current, current->n);
-
-		if (current <= current->next)
-		{
-			i++;
-			current = current->next;
-		}
+		Current = head - head->next;
+		iNum++;
+		printf("[%p] %d\n", (void *)head, head->n);
+		if (Current > 0)
+			head = head->next;
 		else
 		{
-			printf("-> [%p] %d\n", (void *)current->next, current->next->n);
+			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
 			break;
 		}
 	}
 
-	return (i);
+	return (iNum);
 }
