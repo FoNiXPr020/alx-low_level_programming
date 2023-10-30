@@ -245,7 +245,7 @@ void display_entry_class(unsigned long int e_entry, unsigned char *e_ident)
 /**
  * close_elf_id - Close an ELF file.
  * @elf: The file descriptor of the ELF file to be closed.
- * Description: If closing the file fails, the function exits with error code 98.
+ * Description: the file fails, the function exits with error code 98.
  */
 void close_elf_id(int elf)
 {
