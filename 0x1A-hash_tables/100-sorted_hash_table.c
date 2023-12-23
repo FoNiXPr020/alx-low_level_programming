@@ -7,7 +7,7 @@
  * Return: a pointer to the newly created hash table
  * NULL if something went wrong
  */
- 
+
 shash_table_t *shash_table_create(unsigned long int size)
 {
 	shash_table_t *iTable;
